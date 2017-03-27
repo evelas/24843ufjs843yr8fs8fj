@@ -10,55 +10,17 @@ from mpl_toolkits.mplot3d import Axes3D
 from time import sleep
 import numpy as np
 from math import *
-import mate
+import math
 from Tkinter import *
 from Tkinter import Menu
-emport ttk
-import rkMessageBox as mBox
+import ttk
+import tkMessageBox as mBox
 from scipy.interpolate import interp1d
 from scipy import interpolate
  
  
  
- 
-# Using iterator thread to avoid buffer overflow 123
-it = pyfirmata.util.Iterator(board)
-it.start()
- 
-# Define pins 
-a0 = board.get_pin('a:0:i')
-a1=board.get_pin('a:1:i')
-a2 = board.get_pin('a:2:i')
-a3=board.get_pin('a:3:i')
-a4 = board.get_pin('a:4:i')
-a5=board.get_pin('a:5:i')
-a6 = board.get_pin('a:6:i')
-a7=board.get_pin('a:7:i')
-a8 = board.get_pin('a:8:i')
-a9=board.get_pin('a:9:i')
-a10 = board.get_pin('a:10:i')
-a11=board.get_pin('a:11:i')
-a12= board.get_pin('a:12:i')
-a13=board.get_pin('a:13:i')
-ledPin = board.get_pin('d:10:o')
-number_of_diodes = 14
-board.digital[11].mode = SERVO
-board.digital[11].write(0)
-# Initialize main windows with title and size
-top = Tkinter.Tk()
-top.title("SLS-1")
-c=[]
-i=[]
-pValues=[]
-dValues=[]
-angleValue=[]
-x=0
-angel1=0
-n=0
-y=0
-LEntry=0
-Flag=0
-Coordinate=np.linspace(0,180,2)
+  
 #Quit function
 def _quit():
     top.quit()
